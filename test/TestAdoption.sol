@@ -7,8 +7,7 @@ import "../contracts/Adoption.sol";
 contract TestAdoption {
     /*
     define a contract-wide variable containing the smart contract to be tested, 
-    calling the DeployedAddresses smart contract to get its address.
-    */
+    calling the DeployedAddresses smart contract to get its address. */
     Adoption adoption = Adoption(DeployedAddresses.Adoption());
 
     function testUserCanAdoptPet() public {
@@ -27,5 +26,5 @@ contract TestAdoption {
         Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded");
     }
 
-    
+
 }
