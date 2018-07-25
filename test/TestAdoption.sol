@@ -18,4 +18,14 @@ contract TestAdoption {
 
         Assert.equal(returnId, expected, "Adoption of pet ID 8 should be recorder/");
     }
+
+    function testGetAdopterAddressByPetIdInArray() public {
+        address expected = this;
+        //store adopters in memory rather than contracts's storage
+        address[16] memory adopters = adoption.getAdopters();
+
+        Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded");
+    }
+
+    
 }
